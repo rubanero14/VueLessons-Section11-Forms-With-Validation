@@ -1,5 +1,7 @@
 <template>
-  <the-form></the-form>
+  <div class="container">
+    <the-form></the-form>
+  </div>
 </template>
 
 <script>
@@ -13,6 +15,8 @@ export default {
 </script>
 
 <style>
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+npm
 * {
   box-sizing: border-box;
 }

@@ -1,18 +1,18 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{invalid: userNameValidity === 'invalid', valid: userNameValidity === 'valid'}">
+    <div class="form-control-2" :class="{invalid: userNameValidity === 'invalid', valid: userNameValidity === 'valid'}">
       <label for="user-name">Your Name</label>
       <input id="user-name" name="user-name" type="text" v-model.trim="userName" @blur="validateUserName"/>
       <p v-if="userNameValidity === 'invalid'">Please enter a valid name!</p>
       <p v-if="userNameValidity === 'valid'">Awesome!</p>
     </div>
-    <div class="form-control" :class="{invalid: userAgeValidity === 'invalid', valid: userAgeValidity === 'valid'}">
+    <div class="form-control-2" :class="{invalid: userAgeValidity === 'invalid', valid: userAgeValidity === 'valid'}">
       <label for="age">Your Age (Years)</label>
       <input id="age" name="age" type="number" v-model.trim="userAge" ref="ageInput" @blur="validateUserAge"/>
       <p v-if="userAgeValidity === 'invalid'">Please enter a valid age!</p>
       <p v-if="userAgeValidity === 'valid'">Awesome!</p>
     </div>
-    <div class="form-control">
+    <div class="form-control-2">
       <label for="referrer">How did you hear about us?</label>
       <select id="referrer" name="referrer" v-model="referrer">
         <option value="google">Google</option>
@@ -20,7 +20,7 @@
         <option value="newspaper">Newspaper</option>
       </select>
     </div>
-    <div class="form-control" :class="{invalid: checkboxValidity === 'invalid'}">
+    <div class="form-control-2" :class="{invalid: checkboxValidity === 'invalid'}">
       <h2>What are you interested in?</h2>
       <div>
         <input id="interest-news" name="interest" type="checkbox" value="news" v-model="interest" @blur="validateCheckbox"/>
@@ -36,7 +36,7 @@
       </div>
       <p v-if="checkboxValidity === 'invalid'">Choose any of the options here!</p>
     </div>
-    <div class="form-control" :class="{invalid: radioValidity === 'invalid'}">
+    <div class="form-control-2" :class="{invalid: radioValidity === 'invalid'}">
       <h2>How do you learn?</h2>
       <div>
         <input id="how-video" name="how" type="radio" value="video-courses" v-model="how" @blur="validateRadio"/>
@@ -52,10 +52,10 @@
       </div>
       <p v-if="radioValidity === 'invalid'">Choose any of the options here!</p>
     </div>
-    <div class="form-control">
+    <div class="form-control-2">
       <rating-control v-model="rating"></rating-control>
     </div>
-    <div class="form-control" :class="{invalid: confirmTermsValidity === 'invalid'}">
+    <div class="form-control-2" :class="{invalid: confirmTermsValidity === 'invalid'}">
         <input type="checkbox" id="confirm-terms" name="confirm-terms" v-model="confirmTerms" @blur="validateTerms"/>
         <label for="confirm-terms">Accept Terms?</label>
         <p v-if="confirmTermsValidity === 'invalid'">Please accept terms to proceed!</p>
@@ -163,23 +163,23 @@ form {
   background-color: #ffffff;
 }
 
-.form-control {
+.form-control-2 {
   margin: 0.5rem 0;
 }
 
-.form-control.invalid input {
+.form-control-2.invalid input {
   border-color: red;
 }
 
-.form-control.invalid label, .form-control.invalid p {
+.form-control-2.invalid label, .form-control-2.invalid p {
   color: red;
 }
 
-.form-control.valid input {
+.form-control-2.valid input {
   border-color: green;
 }
 
-.form-control.valid label, .form-control.valid p {
+.form-control-2.valid label, .form-control-2.valid p {
   color: green;
 }
 
